@@ -6,6 +6,7 @@ using namespace std;
 #include "fib_n.cpp"
 #include "fib_log_n.cpp"
 #include "utils.cpp"
+#include "tests.cpp"
 
 int main(int argc, char** argv)
 {
@@ -18,14 +19,16 @@ int main(int argc, char** argv)
              << endl
              << "example: fib -n 10 -a N" << "\n"
              << endl;
-        exit(0);
+        return 0;
     }
 
     if ((argc == 2) && (strcmp(argv[1], "--test") == 0)) {
         cout << endl
              << "launch tests" << "\n"
              << endl;
-        exit(0);
+        check_fib_n();
+        check_fib_log_n();
+        return 0;
     }
     
     int fib_num;
@@ -52,7 +55,8 @@ int main(int argc, char** argv)
         Result = getNthFibNum(fib_num);
         cout << "fib value = " << Result << "\n"
              << endl
-             << "it takes " << (double)(clock() - tStart)/CLOCKS_PER_SEC << " seconds\n"
+             << "it takes " << clock() - tStart << " clicks or\n"
+             << (double)(clock() - tStart)/CLOCKS_PER_SEC << " seconds\n"
              << endl;
         return 0;
     }
@@ -68,7 +72,8 @@ int main(int argc, char** argv)
         int result = fib_n_log_func(fib_num);
         cout << "fib value = " << result << "\n"
              << endl
-             << "it takes " << (double)(clock() - tStart)/CLOCKS_PER_SEC << " seconds\n"
+             << "it takes " << clock() - tStart << " clicks or\n"
+             << (double)(clock() - tStart)/CLOCKS_PER_SEC << " seconds\n"
              << endl;
         return 0;
     }
