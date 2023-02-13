@@ -1,4 +1,10 @@
-### Comments
+## Comments
+
+#### Compile command
+
+```bash
+g++ -fdiagnostics-color=always -g ./fib.cpp -o ./fib
+```
 
 ##### Выполнено:
 - Парсинг аргументов из командной строки
